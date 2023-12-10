@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переадресація на інший сайт</title>
+</head>
+<body>
+
+    <style>
+        .google{
+            color: black;
+            background-color: aqua;
+            padding: 10px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .ukrnet{
+            color: black;
+            background-color: greenyellow;
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+
+    <button class="google" onclick="redirectToSite('http://google.com')">Перейти на google.com</button>
+    <button class="ukrnet" onclick="redirectToSite('https://ukr.net')" >Перейти на ukr.net</button>
+
+    <script>
+        function redirectToSite(url) {
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'http://' + url;
+            }
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
